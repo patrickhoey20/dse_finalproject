@@ -102,14 +102,24 @@ for link in linklist:
                 else:
                     career_so = ''
                 # CAREER WAR
-                career_war = 0
-                x = soup.body.find('div',{'class':'stats_pullout'})
-                z = x.find('div',{'class':'p1'})
-                y = z.find('p')
-                if not z == None:
-                    career_war = y.text
+                if active_player == False:
+                    career_war = 0
+                    x = soup.body.find('div',{'class':'stats_pullout'})
+                    z = x.find('div',{'class':'p1'})
+                    y = z.find('p')
+                    if not z == None:
+                        career_war = y.text
+                    else:
+                        career_war = ''
                 else:
-                    career_war = ''
+                    career_war = 0
+                    x = soup.body.find('div',{'class':'stats_pullout'})
+                    z = x.find('div',{'class':'p1'})
+                    y = z.find_all('p')
+                    if not z == None:
+                        career_war = y[1].text
+                    else:
+                        career_war = ''
                 # CAREER SAVES
                 career_saves = 0
                 x = soup.body.tfoot.tr
@@ -152,7 +162,7 @@ for link in linklist:
                 if not x == None:
                     z = x.find_all('li')
                     for elem in z:
-                        if 'MVP' in elem.a.text:
+                        if 'MVP' in elem.a.text and (not 'AS' in elem.a.text):
                             if 'x' in elem.a.text:
                                 if elem.a.text[1] == 'x':
                                     mvps = elem.a.text[0]
