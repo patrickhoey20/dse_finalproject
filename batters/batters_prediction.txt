@@ -1,0 +1,5 @@
+Output of batters_prediction.py
+
+Almost certainly Hall of Famers: ['Miguel Cabrera', 'Albert Pujols']
+On the cusp of being in the Hall of Fame: ['Mike Trout']
+Likely Hall of Fame, but work to do: ['Buster Posey', 'Joey Votto']

@@ -1,0 +1,5 @@
+Output of pitchers_prediction.py
+
+Almost certainly Hall of Famers: ['Clayton Kershaw', 'Craig Kimbrel']
+On the cusp of being in the Hall of Fame: ['Zack Greinke', 'Max Scherzer']
+Likely Hall of Fame, but work to do: ['Kenley Jansen']
