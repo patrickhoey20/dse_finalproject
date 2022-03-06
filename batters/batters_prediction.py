@@ -30,11 +30,11 @@ HOF_work_to_do = []
 for index, row in batters_data.iterrows():
     score = 0
     score = int(row['years_played'])*coeffs['years_played']+(row['career_batting_average'])*coeffs['career_batting_average']+ int(row['career_hits'])*coeffs['career_hits'] + int(row['career_HRs'])*coeffs['career_HRs']+ (row['career_WAR'])*coeffs['career_WAR']+int(row['career_RBIs'])*coeffs['career_RBIs']+int(row['career_runs'])*coeffs['career_runs']+(row['career_OBP'])*coeffs['career_OBP']+(row['career_SLG'])*coeffs['career_SLG']+int(row['world_series_wins'])*coeffs['world_series_wins']+int(row['golden_glove_awards'])*coeffs['golden_glove_awards']+int(row['mvps'])*coeffs['mvps']+int(row['career_hitting_titles'])*coeffs['career_hitting_titles']+int(row['silver_slugger_awards'])*coeffs['silver_slugger_awards']+int(row['all_star_apps'])*coeffs['all_star_apps'] + intercept
-    if score >= 1:
+    if score > 1:
         HOF.append(str(row['name']))
     if score <=1 and score >= 0:
         HOF_cusp.append(str(row['name']))
-    if score <= 0 and score >= -1:
+    if score < 0 and score >= -1:
         HOF_work_to_do.append(str(row['name']))
 print('Almost certainly Hall of Famers: ' + str(HOF))
 print('On the cusp of being in the Hall of Fame: ' + str(HOF_cusp))

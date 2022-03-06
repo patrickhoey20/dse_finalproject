@@ -30,11 +30,11 @@ HOF_work_to_do = []
 for index, row in pitchers_data.iterrows():
     score = 0
     score = int(row['years_played'])*coeffs['years_played']+(row['career_era'])*coeffs['career_era']+ int(row['career_whip'])*coeffs['career_whip'] + int(row['career_ip'])*coeffs['career_ip']+ (row['career_wl'])*coeffs['career_wl']+int(row['career_wins'])*coeffs['career_wins']+int(row['career_so'])*coeffs['career_so']+(row['career_war'])*coeffs['career_war']+(row['career_saves'])*coeffs['career_saves']+int(row['world_series_wins'])*coeffs['world_series_wins']+int(row['cy_young_awards'])*coeffs['cy_young_awards']+int(row['mvps'])*coeffs['mvps']+int(row['era_titles'])*coeffs['era_titles']+int(row['all_star_apps'])*coeffs['all_star_apps'] + intercept
-    if score >= 1:
+    if score > 1:
         HOF.append(str(row['name']))
     if score <=1 and score >= 0:
         HOF_cusp.append(str(row['name']))
-    if score <= 0 and score >= -1:
+    if score < 0 and score >= -1:
         HOF_work_to_do.append(str(row['name']))
 print('Almost certainly Hall of Famers: ' + str(HOF))
 print('On the cusp of being in the Hall of Fame: ' + str(HOF_cusp))
