@@ -1,3 +1,5 @@
+The following project uses logistic regression to predict which active Major League Baseball players will eventually be inducted into the National Baseball Hall of Fame. Our model used historical data (from over 22,000 players) to assess which statistics/awards are most important in determining a player's Hall of Fame chances, and used those weights to predict which active players will be in the Hall one day. Since batters and pitchers have different measures that their performance is judged on, we analyzed the two groups separately.
+
 The following repo is organized into three directories: batters, pitchers, and project. The batters and pitchers directories are in charge of collecting and analyzing data on batters and pitchers, respectively. Both of these directories are organized in the following way:
 
 1. batter_data.py / pitcher_data.py -- scrape the data off of baseball-reference.com
